@@ -1,0 +1,87 @@
+/* Apply background image to the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/1.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Fix the background while scrolling */
+    min-height: 100vh; /* Ensure the background covers the full viewport height */
+  }
+  
+  /* General styles for the user navigation bar */
+  .user-nav {
+    background-color: #2c3e50; /* Dark blue background */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Brand styling */
+  .user-nav .navbar-brand {
+    color: #ecf0f1 !important; /* Light gray text */
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Navbar links styling */
+  .user-nav .navbar-link {
+    display: flex;
+    gap: 20px; /* Space between links */
+    margin-left: auto; /* Push links to the right */
+  }
+  
+  .user-nav .navbar-link a {
+    color: #ecf0f1 !important; /* Light gray text */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-nav .navbar-link a:hover {
+    background-color: #34495e; /* Slightly lighter blue on hover */
+  }
+  
+  /* Logout link styling */
+  .user-nav .navi-logout {
+    margin-left: auto; /* Push logout to the right */
+  }
+  
+  .user-nav .navi-logout a {
+    color: #e74c3c !important; /* Red text for logout */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .user-nav .navi-logout a:hover {
+    background-color: #c0392b; /* Darker red on hover */
+  }
+  
+  /* Responsive navbar toggle button */
+  .user-nav .navbar-toggler {
+    border-color: #ecf0f1; /* Light gray border */
+  }
+  
+  .user-nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ecf0f1' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Active link styling (optional) */
+  .user-nav .navbar-link a.active {
+    background-color: #34495e; /* Slightly lighter blue for active link */
+    font-weight: bold;
+  }
+  
+  /* Ensure content is readable over the background image */
+  .userViewToursPage,
+  .bookedToursPage {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+  }

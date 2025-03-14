@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Background Image for the Page (Optional) */
+.adminToursPage {
+  background-image: url('/images/1.jpg'); /* Add a background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Tour Grid Layout */
+.tourGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual Tour Card */
+.tourElement {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+.tourElement:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tour Image Container */
+.tourImageContainer {
+  width: 100%;
+  height: 200px; /* Fixed height for the image */
+  overflow: hidden; /* Ensure the image doesn't overflow */
+}
+
+.tourImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: transform 0.3s ease;
+}
+
+.tourElement:hover .tourImage {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Card Body */
+.tourElement .card-body {
+  padding: 20px;
+}
+
+/* Card Title */
+.tourElement .card-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Card Text */
+.tourElement .card-text {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+/* Button Group */
+.tourElement .btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.tourElement .btn-group .btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Edit Button */
+.tourElement .btn-group .btn:first-child {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.tourElement .btn-group .btn:first-child:hover {
+  background-color: #2980b9;
+}
+
+/* Delete Button */
+.tourElement .btn-group .btn:last-child {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.tourElement .btn-group .btn:last-child:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tourGrid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .tourGrid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Admin Add */
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Background Image */
+.AdminAddToursPage {
+  background-image: url('/images/1.jpg'); /* Add your background image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Heading */
+.headingAddTour {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Form Container */
+.MainDiv {
+  max-width: 600px; /* Adjust as needed */
+  width: 600px; /* Set a fixed width */
+  min-height: 600px; /* Minimum height to ensure it looks like a square */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center content horizontally */
+  margin: 0 auto; /* Center the container horizontally on the page */
+}
+
+/* Form Input Fields */
+.MainDiv div {
+  margin-bottom: 15px;
+  width: 80%; /* Adjust the width of input fields */
+}
+
+.MainDiv label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+.MainDiv input[type="text"],
+.MainDiv input[type="number"],
+.MainDiv input[type="date"],
+.MainDiv textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff; /* Solid background for inputs */
+}
+
+.MainDiv textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error Messages */
+#error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Buttons */
+.MainDiv button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#cancel {
+  background-color: #e74c3c;
+  color: white;
+  margin-right: 10px;
+}
+
+#cancel:hover {
+  background-color: #c0392b;
+}
+
+#addTour {
+  background-color: #3498db;
+  color: white;
+}
+
+#addTour:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .AdminAddToursPage {
+    padding: 10px;
+  }
+
+  .headingAddTour {
+    font-size: 2rem;
+    padding: 8px 16px;
+  }
+
+  .MainDiv {
+    width: 90%; /* Adjust for smaller screens */
+    min-height: auto; /* Allow height to adjust */
+    padding: 15px;
+  }
+
+  .MainDiv input[type="text"],
+  .MainDiv input[type="number"],
+  .MainDiv input[type="date"],
+  .MainDiv textarea {
+    font-size: 0.9rem;
+  }
+
+  .MainDiv button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
