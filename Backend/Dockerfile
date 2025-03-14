@@ -1,13 +1,12 @@
-FROM openjdk:17-jdk-slim
-
-# Set working directory
+# Build Stage
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-# Copy the JAR file from the target directory (ensure your build process places the JAR there)
-COPY target/*.jar app.jar
-
-# Expose the application's port
+# Run Stage
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
 EXPOSE 8081
-
-# Set the entrypoint to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
