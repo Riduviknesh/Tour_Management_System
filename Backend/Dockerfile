@@ -12,7 +12,9 @@ FROM eclipse-temurin:17-alpine
 
 # Copy the JAR file from the build stage to the runtime stage
 # Ensure the target path and filename are correct
-COPY --from=build /target/*.jar /app/tourbooking-0.0.1-SNAPSHOT.jar
+#COPY --from=build /target/*.jar /app/tourbooking-0.0.1-SNAPSHOT.jar
+# Copy the JAR file from the build stage to the runtime stage
+COPY --from=build /app/target/tourbooking-0.0.1-SNAPSHOT.jar /app/tourbooking-0.0.1-SNAPSHOT.jar
 
 # Expose port 8080 (ensure your application uses this port)
 EXPOSE 8081
