@@ -1,12 +1,21 @@
-# Build Stage
-FROM maven:3.9.6-eclipse-temurin-17 AS builder
-WORKDIR /app
+# Stage 1: Build the application using Maven
+FROM maven:3.9.9-eclipse-temurin-17 AS build
+
+# Copy the entire project into the container
 COPY . .
+
+# Run Maven build to package the application (skipping tests for faster build)
 RUN mvn clean package -DskipTests
 
-# Run Stage
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY --from=builder /app/target/*.jar app.jar
+# Stage 2: Set up the runtime environment with a smaller base image
+FROM eclipse-temurin:17-alpine
+
+# Copy the JAR file from the build stage to the runtime stage
+# Ensure the target path and filename are correct
+COPY --from=build /target/*.jar /app/tourbooking-0.0.1-SNAPSHOT.jar
+
+# Expose port 8080 (ensure your application uses this port)
 EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Run the JAR file when the container starts
+ENTRYPOINT ["java", "-jar", "/app/tourbooking-0.0.1-SNAPSHOT.jar"]
