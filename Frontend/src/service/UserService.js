@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const REST_API_URL = "https://tour-management-system-494l.onrender.com";
+//const REST_API_URL = "https://tour-management-system-494l.onrender.com";
+const REST_API_URL = "http://localhost:8081";
 
 // Axios interceptor to include the Bearer Token in every request
 axios.interceptors.request.use(
